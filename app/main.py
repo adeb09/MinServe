@@ -1,11 +1,20 @@
 from fastapi import FastAPI
 
+from models import ChatCompletionRequest
+
+
+
 app = FastAPI()
 
 
 @app.get("/")
 def root():
     return {"message": "Hello"}
+
+
+@app.post("/v1/chat/completions")
+def completions(request: ChatCompletionRequest):
+    return request
 
 
 if __name__ == "__main__":
