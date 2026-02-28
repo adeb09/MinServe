@@ -13,7 +13,7 @@ def root():
 
 
 @app.post("/v1/chat/completions")
-def completions(request: ChatCompletionRequest):
+async def completions(request: ChatCompletionRequest):
     return request
 
 
